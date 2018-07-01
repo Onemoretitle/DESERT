@@ -22,9 +22,9 @@ public class Map extends JTable {
 
         objects = new HashMap<>(100);
         this.setModel(new DefaultTableModel(this.mapSize, this.mapSize));
-        this.showHorizontalLines = false;
-        this.showVerticalLines = false;
-        this.gridColor = Color.yellow;
+        this.setShowHorizontalLines(true);
+        this.setShowVerticalLines(true);
+        this.setGridColor(Color.black);
         this.setRowHeight(this.cellSize);
         for (int i = 0; i < this.mapSize; i++){
             this.getColumnModel().getColumn(i).setMinWidth(this.cellSize);
@@ -43,8 +43,10 @@ public class Map extends JTable {
                 if (j < this.mapSize - 1)
                     graph.addEdge(i * this.mapSize + j, i * this.mapSize + j + 1, this.cellSize);
             }
-           String str =  graph.toString();
-        System.out.println(str);
+
+            Controls ctrl = new Controls();
+       //    String str =  graph.toString();
+       //    System.out.println(str);
     }
 
     //Добавление нового объекта на поле

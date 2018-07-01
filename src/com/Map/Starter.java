@@ -11,7 +11,6 @@ public class Starter extends JFrame {
         setBounds(32, 32, 1024, 720);
 
         this.add(new Map());
-       // this.add(new Controls());
 
         setVisible(true);
     }
